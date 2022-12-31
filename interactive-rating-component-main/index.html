@@ -36,7 +36,7 @@
   <body>
     <!-- Rating state start -->
 
-    <div class="container">
+    <div class="container rating-window">
       <span class="star-container circle">
         <img src="images/icon-star.svg" alt="Star icon" class="star" />
       </span>
@@ -46,10 +46,9 @@
         Please let us know how we did with your support request. All feedback is
         appreciated to help us improve our offering!
       </p>
-      <form>
+      <form id="rating-form">
         <ul class="list">
           <li>
-            <label class="radio-label circle" for="radio-1">1</label>
             <input
               type="radio"
               name="rating"
@@ -57,9 +56,9 @@
               id="radio-1"
               class="radio"
             />
+            <label class="radio-label circle" for="radio-1">1</label>
           </li>
           <li>
-            <label class="radio-label circle" for="radio-2">2</label>
             <input
               type="radio"
               name="rating"
@@ -67,9 +66,9 @@
               id="radio-2"
               class="radio"
             />
+            <label class="radio-label circle" for="radio-2">2</label>
           </li>
           <li>
-            <label class="radio-label circle" for="radio-3">3</label>
             <input
               type="radio"
               name="rating"
@@ -77,9 +76,9 @@
               id="radio-3"
               class="radio"
             />
+            <label class="radio-label circle" for="radio-3">3</label>
           </li>
           <li>
-            <label class="radio-label circle" for="radio-4">4</label>
             <input
               type="radio"
               name="rating"
@@ -87,9 +86,9 @@
               id="radio-4"
               class="radio"
             />
+            <label class="radio-label circle" for="radio-4">4</label>
           </li>
           <li>
-            <label class="radio-label circle" for="radio-5">5</label>
             <input
               type="radio"
               name="rating"
@@ -97,20 +96,32 @@
               id="radio-5"
               class="radio"
             />
+            <label class="radio-label circle" for="radio-5">5</label>
           </li>
         </ul>
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn">Submit</button>
       </form>
     </div>
 
     <!-- Rating state end -->
 
     <!-- Thank you state start -->
-    <div style="display: none">
-      You selected
+    <div class="container thankyou-window hide">
+      <img
+        src="images/illustration-thank-you.svg"
+        alt="Thank you image"
+        class="thankyou-img"
+      />
+      <p class="your-choice">
+        You selected <span class="rate-value"></span> out of 5
+      </p>
+
       <!-- Add rating here -->
-      out of 5 Thank you! We appreciate you taking the time to give a rating. If
-      you ever need more support, don’t hesitate to get in touch!
+      <h1 class="heading-1">Thank you!</h1>
+      <p class="text">
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don’t hesitate to get in touch!
+      </p>
 
       <!-- Thank you state end -->
     </div>
