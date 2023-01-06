@@ -1,0 +1,133 @@
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: rgb(0, 255, 247);
+  --main-bg-color: hsl(217, 54%, 11%);
+  --card-bg-color: hsl(216, 50%, 16%);
+  --line-color: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: var(--white);
+  background-color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  max-width: 22rem;
+  background-color: var(--card-bg-color);
+  padding: 1.1rem 1.3rem;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+.card__link {
+  border-radius: inherit;
+  position: relative;
+  display: block;
+}
+
+.card__link::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
+}
+
+.card__link:hover::after {
+  content: url(images/icon-view.svg);
+  background-color: rgba(0, 255, 247, 0.6);
+}
+
+.card__picture {
+  width: 100%;
+  border-radius: inherit;
+}
+
+.card__picture::after {
+  content: "Hello";
+}
+
+.card__title {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.card__title:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+.card__text,
+.card__time-left--text,
+.card__author--text {
+  color: var(--soft-blue);
+  line-height: 1.5;
+  margin: 1rem 0;
+  font-weight: 300;
+}
+
+.card__info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--line-color);
+}
+
+:is(.card__eth, .card__time-left, .card__author) > * {
+  vertical-align: middle;
+}
+
+.card__eth--text {
+  color: var(--cyan);
+  font-weight: 400;
+}
+
+.card__eth--icon,
+.card__time--icon {
+  margin-right: 0.3rem;
+}
+
+.card__author--image {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.card__author--name {
+  text-decoration: none;
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+.card__author--name:hover {
+  color: var(--cyan);
+}
