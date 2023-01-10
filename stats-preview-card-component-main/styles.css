@@ -1,0 +1,162 @@
+:root {
+  --main-background: hsl(233, 47%, 7%);
+  --card-background: hsl(244, 38%, 16%);
+  --accent: rgb(170, 92, 219);
+
+  --main-heading-stats: hsl(0, 0%, 100%);
+  --main-paragraph: hsla(0, 0%, 100%, 0.75);
+  --stat-headings: hsla(0, 0%, 100%, 0.6);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* 
+font-family: 'Inter', sans-serif;
+font-family: 'Lexend Deca', sans-serif; 
+*/
+
+body {
+  box-sizing: border-box;
+  font-size: 0.9375rem;
+  /* font-family: "Lexend Deca", sans-serif; */
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-background);
+  padding: 2rem 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--card-background);
+  max-width: 22rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+
+.image {
+  width: 100%;
+  margin-bottom: -3px;
+}
+
+picture {
+  position: relative;
+}
+
+.image--filter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(170, 92, 219, 0.5);
+  top: 0;
+  left: 0;
+}
+
+.heading,
+.stat__value {
+  color: var(--main-heading-stats);
+}
+
+.heading {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.paragraph {
+  color: var(--main-paragraph);
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 1rem 0 2rem;
+}
+
+.stats {
+  list-style: none;
+}
+
+.stat > * {
+  display: block;
+  text-align: center;
+}
+
+.stat {
+  margin-bottom: 1rem;
+}
+
+.stat__value {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.stat__heading {
+  color: var(--stat-headings);
+  text-transform: uppercase;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+@media (min-width: 90rem) {
+  .container {
+    height: 95vh;
+  }
+
+  .card {
+    flex-direction: row-reverse;
+    max-width: 66rem;
+  }
+
+  .card__content {
+    padding: 0 3rem;
+    align-items: flex-start;
+    width: 50%;
+  }
+
+  .image {
+    width: initial;
+  }
+
+  .heading {
+    text-align: start;
+  }
+
+  .paragraph {
+    text-align: start;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+  }
+
+  .stat > * {
+    text-align: start;
+  }
+
+  picture {
+    width: 50%;
+  }
+}

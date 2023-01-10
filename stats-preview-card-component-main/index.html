@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Frontend Mentor | Stats preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <picture>
+          <source
+            media="(min-width: 90rem)"
+            srcset="images/image-header-desktop.jpg"
+          />
+          <img
+            src="images/image-header-mobile.jpg"
+            alt="Image mobile"
+            class="image"
+          />
+          <div class="image--filter"></div>
+        </picture>
+
+        <div class="card__content">
+          <h1 class="heading">
+            Get <span class="accent">insights</span> that help your business
+            grow.
+          </h1>
+          <p class="paragraph">
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
+          </p>
+          <ul class="stats">
+            <li class="stat">
+              <span class="stat__value">10k+</span>
+              <span class="stat__heading">companies</span>
+            </li>
+            <li class="stat">
+              <span class="stat__value">314</span>
+              <span class="stat__heading">templates</span>
+            </li>
+            <li class="stat">
+              <span class="stat__value">12m+</span>
+              <span class="stat__heading">queries</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/VadimKaravayev/frontendmentor" target="_blank"
+        >Buddy Cake</a
+      >.
+    </div>
+  </body>
+</html>
