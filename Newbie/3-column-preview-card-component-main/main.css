@@ -1,0 +1,92 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.9375rem;
+}
+.container {
+  background-color: hsl(0, 0%, 95%);
+}
+.card {
+  width: 21rem;
+  padding: 1.5rem 3.2rem;
+}
+.card:first-child {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+@media (min-width: 1440px) {
+  .card:first-child {
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+}
+.card:last-child {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+@media (min-width: 1440px) {
+  .card:last-child {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+}
+.card > * {
+  margin: 1rem 0;
+}
+.card--container {
+  background-color: hsla(0, 0%, 100%, 0.75);
+  padding: 4rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 1440px) {
+  .card--container {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.card--orange {
+  background-color: hsl(31, 77%, 52%);
+}
+.card--orange .card__cta-learn-more {
+  color: hsl(31, 77%, 52%);
+}
+.card--cyan {
+  background-color: hsl(184, 100%, 22%);
+}
+.card--cyan .card__cta-learn-more {
+  color: hsl(184, 100%, 22%);
+}
+.card--dark-cyan {
+  background-color: hsl(179, 100%, 13%);
+}
+.card--dark-cyan .card__cta-learn-more {
+  color: hsl(179, 100%, 13%);
+}
+.card__title {
+  color: hsl(0, 0%, 95%);
+  text-transform: uppercase;
+  font-family: "Big Shoulders Display", cursive;
+}
+.card__text {
+  color: hsla(0, 0%, 100%, 0.75);
+  line-height: 1.7;
+}
+.card__cta-learn-more {
+  background-color: hsl(0, 0%, 95%);
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  text-transform: capitalize;
+  border-radius: 2rem;
+  border: 2px solid hsl(0, 0%, 95%);
+  display: inline-block;
+  transition: all 0.3s ease-out;
+}
+.card__cta-learn-more:hover {
+  background-color: transparent;
+  color: hsl(0, 0%, 95%);
+}
