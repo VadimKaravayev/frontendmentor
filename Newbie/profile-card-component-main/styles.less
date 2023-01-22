@@ -1,0 +1,154 @@
+@screens: {
+  mobile: 23.4375rem;
+  desktop: 90rem;
+};
+
+@colors: {
+  dark-cyan: hsl(185, 75%, 39%);
+  very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  dark-grayish-blue: hsl(227, 10%, 46%);
+  dark-gray: hsl(0, 0%, 59%);
+};
+
+@font-size: 1.125rem;
+@font-kumbh: "Kumbh Sans", sans-serif;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: @font-kumbh;
+  font-size: @font-size;
+  color: @colors[dark-gray];
+}
+
+.bg-pattern {
+  height: 40rem;
+  width: $height;
+  position: absolute;
+  background-size: contain;
+}
+
+.divider {
+  display: block;
+  border-bottom: 1px solid @colors[dark-gray];
+  margin: 2rem 0;
+}
+
+.heading-color {
+  color: @colors[very-dark-desaturated-blue];
+}
+
+.profile-card {
+  position: relative;
+  background-color: white;
+  width: 90vw;
+  max-width: 21.25rem;
+  border-radius: 1rem;
+  padding-bottom: 2rem;
+  overflow: hidden;
+  z-index: 1;
+
+  &__background {
+    background-image: url(images/bg-pattern-card.svg);
+    height: 35%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  &__container {
+    height: 100vh;
+    background-color: @colors[dark-cyan];
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    background-position: -35vw -30vh, 42vw 65vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -2;
+
+    .bg-pattern-top:extend(.bg-pattern) {
+      background-image: url(images/bg-pattern-top.svg);
+      top: -20rem;
+      left: -25rem;
+    }
+
+    .bg-pattern-bottom:extend(.bg-pattern) {
+      background-image: url(images/bg-pattern-bottom.svg);
+      bottom: -15rem;
+      right: -28rem;
+    }
+  }
+
+  &__photo {
+    position: inherit;
+    z-index: 1;
+    border-radius: 50%;
+    border: 0.4rem solid white;
+    margin: 0 auto;
+    display: block;
+    margin-top: 5rem;
+  }
+
+  &__person-info {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0.6rem;
+    grid-template-areas:
+      "name age "
+      "location location";
+    margin-top: 1rem;
+
+    .name:extend(.heading-color) {
+      grid-area: name;
+      justify-self: end;
+      font-weight: 700;
+    }
+
+    .age {
+      grid-area: age;
+    }
+
+    .location {
+      grid-area: location;
+      justify-self: center;
+      font-size: 1rem;
+      margin-top: 0.3rem;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: space-around;
+
+    .stats-item {
+      list-style: none;
+
+      & > * {
+        display: block;
+        text-align: center;
+      }
+
+      &__info:extend(.heading-color) {
+        font-weight: 700;
+      }
+      &__title {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

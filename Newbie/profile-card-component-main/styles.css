@@ -1,0 +1,122 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.125rem;
+  color: hsl(0, 0%, 59%);
+}
+.bg-pattern,
+.profile-card__container .bg-pattern-top,
+.profile-card__container .bg-pattern-bottom {
+  height: 40rem;
+  width: 40rem;
+  position: absolute;
+  background-size: contain;
+}
+.divider {
+  display: block;
+  border-bottom: 1px solid hsl(0, 0%, 59%);
+  margin: 2rem 0;
+}
+.heading-color,
+.profile-card__person-info .name,
+.profile-card__stats .stats-item__info {
+  color: hsl(229, 23%, 23%);
+}
+.profile-card {
+  position: relative;
+  background-color: white;
+  width: 90vw;
+  max-width: 21.25rem;
+  border-radius: 1rem;
+  padding-bottom: 2rem;
+  overflow: hidden;
+  z-index: 1;
+}
+.profile-card__background {
+  background-image: url(images/bg-pattern-card.svg);
+  height: 35%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.profile-card__container {
+  height: 100vh;
+  background-color: hsl(185, 75%, 39%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-position: -35vw -30vh, 42vw 65vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -2;
+}
+.profile-card__container .bg-pattern-top {
+  background-image: url(images/bg-pattern-top.svg);
+  top: -20rem;
+  left: -25rem;
+}
+.profile-card__container .bg-pattern-bottom {
+  background-image: url(images/bg-pattern-bottom.svg);
+  bottom: -15rem;
+  right: -28rem;
+}
+.profile-card__photo {
+  position: inherit;
+  z-index: 1;
+  border-radius: 50%;
+  border: 0.4rem solid white;
+  margin: 0 auto;
+  display: block;
+  margin-top: 5rem;
+}
+.profile-card__person-info {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0.6rem;
+  grid-template-areas: "name age " "location location";
+  margin-top: 1rem;
+}
+.profile-card__person-info .name {
+  grid-area: name;
+  justify-self: end;
+  font-weight: 700;
+}
+.profile-card__person-info .age {
+  grid-area: age;
+}
+.profile-card__person-info .location {
+  grid-area: location;
+  justify-self: center;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+.profile-card__stats {
+  display: flex;
+  justify-content: space-around;
+}
+.profile-card__stats .stats-item {
+  list-style: none;
+}
+.profile-card__stats .stats-item > * {
+  display: block;
+  text-align: center;
+}
+.profile-card__stats .stats-item__info {
+  font-weight: 700;
+}
+.profile-card__stats .stats-item__title {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}

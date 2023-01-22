@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Frontend Mentor | Profile card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-card__container">
+      <div class="bg-pattern-top"></div>
+      <div class="profile-card">
+        <div class="profile-card__background"></div>
+        <img
+          src="images/image-victor.jpg"
+          alt="Victor image"
+          class="profile-card__photo"
+        />
+        <div class="profile-card__person-info">
+          <div class="name">Victor Crest</div>
+          <div class="age">26</div>
+          <div class="location">London</div>
+        </div>
+        <span class="divider"></span>
+        <ul class="profile-card__stats">
+          <li class="stats-item">
+            <span class="stats-item__info">80K</span>
+            <span class="stats-item__title">Followers</span>
+          </li>
+          <li class="stats-item">
+            <span class="stats-item__info">803K</span>
+            <span class="stats-item__title">Likes</span>
+          </li>
+          <li class="stats-item">
+            <span class="stats-item__info">1.4K</span>
+            <span class="stats-item__title">Photos</span>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-pattern-bottom"></div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Buddy Cake</a>.
+    </div>
+  </body>
+</html>
