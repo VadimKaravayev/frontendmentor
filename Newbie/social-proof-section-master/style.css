@@ -1,0 +1,152 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 0.9375rem;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+  padding: 5rem 1rem;
+}
+@media (min-width: 1440px) {
+  .container {
+    padding: 5rem 6rem;
+  }
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  row-gap: 1rem;
+  flex-basis: min-content;
+  flex-grow: 1;
+  color: hsl(300, 43%, 22%);
+}
+@media (min-width: 600px) {
+  .intro {
+    align-items: start;
+    text-align: start;
+  }
+}
+.intro__title {
+  width: 8em;
+}
+@media (min-width: 850px) {
+  .intro__title {
+    font-size: 3em;
+  }
+}
+.intro__text {
+  line-height: 1.3;
+  min-width: 19em;
+  max-width: 25em;
+}
+.ratings {
+  flex-grow: 4;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+@media (min-width: 770px) {
+  .ratings {
+    align-items: end;
+  }
+}
+.rating {
+  background-color: hsl(300, 24%, 96%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0;
+}
+@media (min-width: 770px) {
+  .rating {
+    flex-direction: row;
+    column-gap: 2rem;
+    width: 31em;
+    padding: 0.6rem 2rem;
+  }
+}
+@media (min-width: 850px) {
+  .rating-1 {
+    transform: translateX(calc(-11% * 2));
+  }
+  .rating-2 {
+    transform: translateX(-11%);
+  }
+}
+.rating > * {
+  margin: 3px 0;
+  padding: 3px 0;
+}
+.rating__stars {
+  list-style: none;
+  display: flex;
+  column-gap: 0.5rem;
+}
+.rating__title {
+  color: hsl(300, 43%, 22%);
+}
+.comments {
+  flex-grow: 2;
+  color: hsl(0, 0%, 100%);
+  display: flex;
+  list-style: none;
+  flex-flow: row wrap;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  justify-content: center;
+}
+@media (min-width: 1300px) {
+  .comments {
+    justify-content: space-between;
+  }
+}
+.comment {
+  background-color: hsl(300, 43%, 22%);
+  padding: 1.5rem 1.5rem;
+  border-radius: 0.5rem;
+  max-width: 25rem;
+}
+@media (min-width: 1300px) {
+  .comment-2 {
+    transform: translateY(10%);
+  }
+  .comment-3 {
+    transform: translateY(20%);
+  }
+}
+.comment__author {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "avatar name" "avatar role";
+  padding-bottom: 1.5rem;
+}
+.comment__author-avatar {
+  grid-area: avatar;
+  width: 60%;
+  border-radius: 50%;
+}
+.comment__author-name {
+  grid-area: name;
+  align-self: end;
+  margin-bottom: 0.3rem;
+}
+.comment__author-role {
+  grid-area: role;
+  color: hsl(333, 80%, 67%);
+}
+.comment__text {
+  line-height: 1.4;
+}
