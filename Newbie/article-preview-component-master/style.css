@@ -1,0 +1,186 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: hsl(210, 46%, 95%);
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8125rem;
+  color: hsl(214, 17%, 51%);
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 350px;
+  place-self: center;
+  position: relative;
+}
+@media screen and (orientation: landscape) {
+  .card {
+    flex-direction: row;
+    width: auto;
+  }
+}
+.card__image {
+  background-image: url(images/drawers.jpg);
+  height: 13rem;
+  background-size: cover;
+  background-position: center;
+}
+@media screen and (orientation: landscape) {
+  .card__image {
+    height: auto;
+    width: 100%;
+  }
+}
+.card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1% 8%;
+  padding-top: 6%;
+  padding-bottom: 0%;
+}
+@media screen and (orientation: landscape) {
+  .card__body {
+    margin: 1% 4%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    align-items: stretch;
+  }
+}
+.card__body > * {
+  padding: 0.5rem 0;
+}
+.card__title {
+  color: hsl(217, 19%, 35%);
+}
+.card__text {
+  line-height: 1.7;
+}
+.author {
+  display: grid;
+  grid-template-columns: 20% 1fr 20%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "avatar name share" "avatar date share";
+  column-gap: 1rem;
+}
+.author__avatar {
+  grid-area: avatar;
+  width: 80%;
+  border-radius: 50%;
+  place-self: center;
+}
+@media screen and (orientation: landscape) {
+  .author__avatar {
+    place-self: center start;
+  }
+}
+.author__name {
+  grid-area: name;
+  align-self: end;
+  color: hsl(217, 19%, 35%);
+}
+.author .post-date {
+  grid-area: date;
+}
+.author .share-btn {
+  background-color: hsl(210, 46%, 95%);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  place-self: center end;
+}
+.btn {
+  grid-area: share;
+  border-style: none;
+  font-family: "Manrope", sans-serif;
+  border: none;
+  cursor: pointer;
+}
+.popup.hide {
+  display: none;
+}
+.popup {
+  display: grid;
+  grid-template-columns: 30% 1fr 1fr 1fr 35%;
+  grid-template-rows: 1fr;
+  background-color: hsl(217, 19%, 35%);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  align-items: center;
+}
+@media screen and (orientation: landscape) {
+  .popup {
+    width: 60%;
+    grid-template-columns: 30% 1fr 1fr 1fr;
+    left: 45%;
+    bottom: 45%;
+    border-radius: 0.6rem;
+    position: relative;
+  }
+  .popup::before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+    left: 50%;
+    bottom: -13%;
+    transform: translate(-50%, 20%);
+  }
+}
+.popup__info {
+  color: hsl(212, 23%, 69%);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  grid-column: 1/2;
+  grid-row: 1;
+}
+.popup .btn {
+  background: hsl(217, 19%, 35%);
+}
+.popup .fb-btn {
+  grid-column: 2/3;
+  grid-row: 1;
+}
+.popup .twitter-btn {
+  grid-column: 3/4;
+  grid-row: 1;
+}
+.popup .pint-btn {
+  grid-column: 4/5;
+  grid-row: 1;
+}
+.popup .btn-arrow {
+  background-color: hsl(214, 17%, 51%);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  grid-column: 5/6;
+  grid-row: 1;
+  justify-self: end;
+}
+.popup .btn-arrow path {
+  fill: white;
+}
+@media screen and (orientation: landscape) {
+  .popup .btn-arrow {
+    display: none;
+  }
+}
+.attribution {
+  place-self: end center;
+}

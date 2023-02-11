@@ -1,0 +1,220 @@
+// ## Colors
+
+@very-dark-grayish-blue: hsl(217, 19%, 35%);
+@desaturated-dark-blue: hsl(214, 17%, 51%);
+@grayish-blue: hsl(212, 23%, 69%);
+@light-grayish-blue: hsl(210, 46%, 95%);
+
+@font-size: 13px;
+
+//font-family: 'Manrope', sans-serif;
+@font-manrope: "Manrope", sans-serif;
+@font-size: 0.8125rem;
+
+.share-btn-mixin(@bg-color) {
+  background-color: @bg-color;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: @light-grayish-blue;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  font-family: @font-manrope;
+  font-size: @font-size;
+  color: @desaturated-dark-blue;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 350px;
+  place-self: center;
+  position: relative;
+
+  @media screen and (orientation: landscape) {
+    flex-direction: row;
+    width: auto;
+  }
+
+  &__image {
+    background-image: url(images/drawers.jpg);
+    height: 13rem;
+    background-size: cover;
+    background-position: center;
+
+    @media screen and (orientation: landscape) {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1% 8%;
+    padding-top: 6%;
+    padding-bottom: 0%;
+
+    @media screen and (orientation: landscape) {
+      margin: 1% 4%;
+      padding-top: 3%;
+      padding-bottom: 3%;
+      align-items: stretch;
+    }
+
+    & > * {
+      padding: 0.5rem 0;
+    }
+  }
+
+  &__title {
+    color: @very-dark-grayish-blue;
+  }
+
+  &__text {
+    line-height: 1.7;
+  }
+}
+
+.author {
+  display: grid;
+  grid-template-columns: 20% 1fr 20%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "avatar name share"
+    "avatar date share";
+  column-gap: 1rem;
+
+  &__avatar {
+    grid-area: avatar;
+    width: 80%;
+    border-radius: 50%;
+    place-self: center;
+
+    @media screen and (orientation: landscape) {
+      place-self: center start;
+    }
+  }
+  &__name {
+    grid-area: name;
+    align-self: end;
+    color: @very-dark-grayish-blue;
+  }
+  .post-date {
+    grid-area: date;
+  }
+
+  .share-btn {
+    background-color: @light-grayish-blue;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    place-self: center end;
+  }
+}
+
+.btn {
+  grid-area: share;
+  border-style: none;
+  font-family: @font-manrope;
+  border: none;
+  cursor: pointer;
+}
+
+.popup.hide {
+  display: none;
+}
+
+.popup {
+  display: grid;
+  grid-template-columns: 30% 1fr 1fr 1fr 35%;
+  grid-template-rows: 1fr;
+  background-color: @very-dark-grayish-blue;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  align-items: center;
+
+  @media screen and (orientation: landscape) {
+    width: 60%;
+    grid-template-columns: 30% 1fr 1fr 1fr;
+    left: 45%;
+    bottom: 45%;
+    border-radius: 0.6rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-style: solid;
+      border-width: 10px 10px 0 10px;
+      border-color: @very-dark-grayish-blue transparent transparent transparent;
+      left: 50%;
+      bottom: -13%;
+      transform: translate(-50%, 20%);
+    }
+  }
+
+  &__info {
+    color: @grayish-blue;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    grid-column: 1/2;
+    grid-row: 1;
+  }
+
+  .btn {
+    background: @very-dark-grayish-blue;
+  }
+
+  .fb-btn {
+    grid-column: 2/3;
+    grid-row: 1;
+  }
+
+  .twitter-btn {
+    grid-column: 3/4;
+    grid-row: 1;
+  }
+
+  .pint-btn {
+    grid-column: 4/5;
+    grid-row: 1;
+  }
+
+  .btn-arrow {
+    .share-btn-mixin(@desaturated-dark-blue);
+    path {
+      fill: white;
+    }
+    grid-column: 5/6;
+    grid-row: 1;
+    justify-self: end;
+
+    @media screen and (orientation: landscape) {
+      display: none;
+    }
+  }
+}
+
+.attribution {
+  place-self: end center;
+}
