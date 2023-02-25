@@ -1,0 +1,89 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  color: hsl(229, 6%, 66%);
+}
+h1,
+h2,
+h3 {
+  color: hsl(234, 12%, 34%);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(0, 0%, 98%);
+  padding: 6rem 0;
+}
+.intro {
+  max-width: 31em;
+  text-align: center;
+}
+.intro__title-1 {
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+.card-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "cyan" "red" "orange" "blue";
+  row-gap: 2rem;
+  gap: 2rem;
+  margin-top: 8rem;
+}
+@media (min-width: 768px) {
+  .card-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "cyan red blue" "cyan orange blue";
+  }
+}
+.card {
+  max-width: 22rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0px 10px 16px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.card--color-cyan {
+  grid-area: cyan;
+  border-top: 0.5rem solid hsl(180, 62%, 55%);
+}
+@media (min-width: 768px) {
+  .card--color-cyan {
+    align-self: center;
+    justify-self: end;
+  }
+}
+.card--color-red {
+  border-top: 0.5rem solid hsl(0, 78%, 62%);
+  grid-area: red;
+}
+.card--color-orange {
+  border-top: 0.5rem solid hsl(34, 97%, 64%);
+  grid-area: orange;
+}
+.card--color-blue {
+  border-top: 0.5rem solid hsl(212, 86%, 64%);
+  grid-area: blue;
+}
+@media (min-width: 768px) {
+  .card--color-blue {
+    align-self: center;
+  }
+}
+.card__img {
+  display: block;
+  width: 15%;
+  align-self: end;
+}
