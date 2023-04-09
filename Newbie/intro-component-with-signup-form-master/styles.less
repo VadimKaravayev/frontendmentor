@@ -1,0 +1,186 @@
+//## Colors
+
+//### Primary
+@red: hsl(0, 100%, 74%);
+@green: rgb(56, 204, 140);
+
+//### Accent
+@blue: hsl(248, 32%, 49%);
+
+//### Neutral
+@dark-blue: rgb(62, 60, 73);
+@grayish-blue: hsl(246, 25%, 77%);
+
+@font-poppins: "Poppins", sans-serif;
+
+@shadow: 0px 6px 3px 2px rgba(62, 60, 73, 0.2);
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  border: 3px solid @red;
+  font-family: @font-poppins;
+  padding: 5rem 1rem;
+  background-image: url("./images/bg-intro-mobile.png");
+  background-color: lightcoral;
+}
+
+.card {
+  color: white;
+  text-align: center;
+  margin-bottom: 4rem;
+
+  &__title {
+    width: 9em;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    line-height: 1.7;
+  }
+}
+
+.proposition {
+  background-color: @blue;
+  text-align: center;
+  color: @grayish-blue;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: @shadow;
+
+  &__first-part--highlighted {
+    color: white;
+    font-weight: 500;
+  }
+}
+
+.form-container {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: @shadow;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  &-group {
+    position: relative;
+    color: @grayish-blue;
+    font-size: 0.9rem;
+    &__label {
+      position: absolute;
+      top: 20%;
+      left: 0.7rem;
+      font-weight: 500;
+    }
+    &__input {
+      font-family: @font-poppins;
+      width: 100%;
+      padding: 1rem 0.5rem;
+      border: 1px solid @grayish-blue;
+      border-radius: 0.2rem;
+    }
+    input:focus + label,
+    input:not(:placeholder-shown) + label {
+      z-index: -1;
+    }
+  }
+  &__btn {
+    background-color: @green;
+    color: white;
+    border: unset;
+    text-transform: uppercase;
+    font-family: @font-poppins;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.5);
+    transform: translateY(0);
+    cursor: pointer;
+
+    &:active {
+      box-shadow: unset;
+      transform: translateY(4px);
+    }
+  }
+}
+
+.terms-and-services {
+  text-align: center;
+  color: @grayish-blue;
+  font-size: 0.7rem;
+
+  &__link {
+    color: @red;
+    text-decoration: auto;
+    font-weight: 500;
+  }
+}
+
+.validation-error {
+  border: 2px solid @red;
+  color: @red;
+}
+
+.validation-error-icon {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+}
+
+.error-msg {
+  font-style: italic;
+  display: block;
+  text-align: right;
+  color: @red;
+  margin-top: 0.4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: minmax(0, 35rem) minmax(0, 30rem);
+    justify-content: center;
+    grid-template-rows: 17% 1fr;
+    grid-template-areas:
+      "card proposition"
+      "card form";
+
+    background-image: url("./images/bg-intro-desktop.png");
+  }
+
+  .card {
+    grid-area: card;
+    text-align: start;
+    align-self: center;
+    &__title {
+      margin-left: 0;
+      margin-right: 0;
+      font-size: 3em;
+      line-height: 1.2;
+    }
+  }
+
+  .proposition {
+    grid-area: proposition;
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    align-self: baseline;
+  }
+
+  .form-container {
+    grid-area: form;
+  }
+}

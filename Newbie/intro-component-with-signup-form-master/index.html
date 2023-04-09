@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Intro component with sign up form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h2 class="card__title">Learn to code by watching others</h2>
+        <p class="card__text">
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
+      <div class="proposition">
+        <p class="proposition__first-part">
+          <span class="proposition__first-part--highlighted">
+            Try it free 7 days
+          </span>
+          then
+        </p>
+        <p class="proposition__second-part">$20/mo. thereafter</p>
+      </div>
+      <div class="form-container">
+        <form action="" class="form" method="POST">
+          <div class="form-group">
+            <input
+              id="first-name-input"
+              class="form-group__input"
+              type="text"
+              name="firstName"
+              placeholder=" "
+            />
+            <label for="first-name-input" class="form-group__label"
+              >First Name</label
+            >
+          </div>
+          <div class="form-group">
+            <input
+              id="last-name-input"
+              class="form-group__input"
+              type="text"
+              name="lastName"
+              placeholder=" "
+            />
+            <label for="last-name-input" class="form-group__label"
+              >Last Name
+            </label>
+          </div>
+          <div class="form-group">
+            <input
+              id="email-input"
+              class="form-group__input"
+              type="email"
+              name="email"
+              placeholder=" "
+            />
+            <label for="email-input" class="form-group__label"
+              >Email Address</label
+            >
+          </div>
+          <div class="form-group">
+            <input
+              id="password-input"
+              class="form-group__input"
+              type="password"
+              name="password"
+              placeholder=" "
+            />
+            <label for="password-input" class="form-group__label"
+              >Password</label
+            >
+          </div>
+          <button type="submit" class="form__btn">Claim your free trial</button>
+        </form>
+        <div class="terms-and-services">
+          By clicking the button, you are agreeing to our
+          <a href="javascript:void(0)" class="terms-and-services__link"
+            >Terms and Services</a
+          >
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
