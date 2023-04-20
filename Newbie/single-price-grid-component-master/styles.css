@@ -1,0 +1,86 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  font-family: "Karla", sans-serif;
+  padding: 1.2rem;
+}
+.card {
+  padding: 1rem;
+}
+.card--first .card__text {
+  color: hsl(218, 22%, 67%);
+}
+.card--middle {
+  background-color: hsl(179, 62%, 43%);
+}
+.card--last {
+  background-color: hsl(179, 62%, 43%);
+  filter: brightness(1.1);
+}
+.card__title {
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.2rem;
+}
+.card__title--cyan {
+  color: hsl(179, 62%, 43%);
+}
+.card__subtitle {
+  color: hsl(71, 73%, 54%);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+.card__text {
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+.card__cta {
+  border: unset;
+  background-color: hsl(71, 73%, 54%);
+  color: white;
+  font-family: "Karla", sans-serif;
+  margin: 0 auto;
+  display: block;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem;
+}
+.offer__price {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.offer__price-info {
+  color: hsl(204, 43%, 93%);
+}
+.option-list {
+  list-style: none;
+  color: hsl(204, 43%, 93%);
+}
+.option-list .option {
+  margin: 0.2rem 0;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "card1 card1" "card2 card3";
+  }
+  .card--first {
+    grid-area: card1;
+  }
+  .card--middle {
+    grid-area: card2;
+  }
+  .card--last {
+    grid-area: card3;
+  }
+}
