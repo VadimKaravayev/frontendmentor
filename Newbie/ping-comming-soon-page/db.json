@@ -1,0 +1,58 @@
+{
+  "subscribers": [
+    {
+      "email": "foo@bar.com",
+      "id": 1
+    },
+    {
+      "email": "bar@bar.com",
+      "id": 2
+    },
+    {
+      "email": "qqq@qqq.com",
+      "id": 3
+    },
+    {
+      "email": "www@www.com",
+      "id": 4
+    },
+    {
+      "email": "foo@foo.com",
+      "id": 5
+    },
+    {
+      "email": "foo@bar.com",
+      "id": 6
+    },
+    {
+      "email": "foo@bar.com",
+      "id": 7
+    },
+    {
+      "email": "foo@bar.com",
+      "id": 8
+    },
+    {
+      "email": "foo@bar.ua",
+      "id": 9
+    },
+    {
+      "email": "foo@bar.au",
+      "id": 10
+    },
+    {
+      "email": "foo@bar.az",
+      "id": 11
+    },
+    {
+      "email": "vox@vox.com",
+      "id": 12
+    },
+    {
+      "email": {
+        "email": "fff@fff.com"
+      },
+      "id": 13
+    }
+  ]
+}
