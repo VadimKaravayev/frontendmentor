@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="dist/styles.css">
   
   <title>Frontend Mentor | News homepage</title>
@@ -12,42 +15,101 @@
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 </head>
 <body>
+  <header class="header">
+    <div class="logo">
+      <a href="#" class="logo__link">
+        <img src="./assets/images/logo.svg" alt="logo" class="logo__image">
+      </a>
+    </div>
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu</span></button>
+    <nav class="navbar">
+      <ul id="primary-navigation" class="primary-navigation" data-visible="false">
+        <li class="primary-navigation__item">
+          <a class="link" href="#">Home</a>
+        </li>
+        <li class="primary-navigation__item">
+          <a class="link" href="#">New</a>
+        </li>
+        <li class="primary-navigation__item">
+          <a class="link" href="#">Popular</a>
+        </li>
+        <li class="primary-navigation__item">
+          <a class="link" href="#">Trending</a>
+        </li>
+        <li class="primary-navigation__item">
+          <a class="link" href="#">Categories</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-  Home
-  New
-  Popular
-  Trending
-  Categories
-
-  The Bright Future of Web 3.0?
-
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
-
-  Read more
-
-  New 
-
-  Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
-
-  The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
-
-  Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
-
-  01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
-
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
-
-  03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
+  <main class="main-content">
+    <article class="hero-card">
+      <div class="hero-card__image-wrapper">
+        <picture>
+          <source media="(min-width: 48rem)" srcset="/assets/images/image-web-3-desktop.jpg"/>
+          <img src="/assets/images/image-web-3-mobile.jpg" alt="we3-mobile">
+        </picture>
+        
+      </div>
+      <h2 class="hero-card__heading">The Bright Future of Web 3.0?</h2>
+      <p class="hero-card__text text-color__dark-grayish-blue">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+        But is it really fulfilling its promise?</p>
+        
+      
+        <a href="#" class="hero-card__btn">Read more</a>
+    </article>
+    <section class="blue-section">
+      <h2 class="blue-section__heading">New</h2>
+      <article>
+        <h3 class="text-color__off-white">Hydrogen VS Electric Cars</h3>
+        <p class="text-color__grayish-blue">Will hydrogen-fueled cars ever catch up to EVs?</p>
+      </article>
+      <article>
+        <h3 class="text-color__off-white"> The Downsides of AI Artistry</h3>
+        <p class="text-color__grayish-blue">What are the possible adverse effects of on-demand AI image generation?</p>
+      </article>
+      <article>
+        <h3 class="text-color__off-white">Is VC Funding Drying Up?</h3>
+        <p class="text-color__grayish-blue">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+      </article>
+    </section>
+    <section class="numbered-section">
+      <article class="card">
+        <div class="card__image-wrapper">
+          <img calss="card__image" src="/assets/images/image-retro-pcs.jpg" alt="retro pcs">
+        </div>
+        <div class="card__text-wrapper">
+          <div class="card__number">01</div>
+          <h4 class="card__heading">Reviving Retro PCs</h4>
+          <p class="card__text">What happens when old PCs are given modern upgrades?</p>
+        </div>
+        
+      </article>
+      <article class="card">
+        <div class="card__image-wrapper">
+          <img calss="card__image" src="/assets/images/image-top-laptops.jpg" alt="retro pcs">
+        </div>
+        <div class="card__text-wrapper">
+          <div class="card__number">02</div>
+          <h4 class="card__heading">Top 10 Laptops of 2022</h4>
+          <p class="card__text">Our best picks for various needs and budgets.</p>
+        </div>
+        
+      </article>
+      <article class="card">
+        <div class="card__image-wrapper">
+          <img calss="card__image" src="/assets/images/image-gaming-growth.jpg" alt="retro pcs">
+        </div>
+        <div class="card__text-wrapper">
+          <div class="card__number">03</div>
+          <h4 class="card__heading">The Growth of Gaming</h4>
+          <p class="card__text">How the pandemic has sparked fresh opportunities.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+  
   <script src="dist/bundle.js"></script>
 </body>
 </html>
